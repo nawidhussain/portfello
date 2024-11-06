@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Sets the viewport to make the website responsive on all devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfello - Personal Portfolio HTML%</title>
+
+	<!-- Importing Swiper CSS for carousel/slideshow functionality -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+	<!-- Importing Font Awesome CSS for icons -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<!-- Link to custom CSS file -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+
+		body {
+		    cursor: none;
+		    overflow: hidden;
+		}
+
+		.cursor {
+		    display: block;
+		    width: 30px;
+		    height: 30px;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%);
+		    border-radius: 50%;
+		    background: transparent;
+		    pointer-events: none;
+		    z-index: 111;
+		    border: 1px solid #fff;
+		    transition: all 0.1s ease-out; /* Reduced transition time for smoother movement */
+		    animation: moveCursor1 .5s infinite alternate;
+		}
+
+		.expand {
+		    background: transparent;
+		    animation: moveCursor2 .5s forwards;
+		    border: 1px solid yellow;
+		}
+
+		@keyframes moveCursor1 {
+		    from {
+		        transform: scale(1);
+		    }
+
+		    to {
+		        transform: scale(0.8);
+		    }
+		}
+
+		@keyframes moveCursor2 {
+		    0% {
+		        transform: scale(1);
+		    }
+
+		    50% {
+		        transform: scale(2.5);
+		    }
+
+		    100% {
+		        transform: scale(1);
+		        opacity: 0;
+		    }
+		}
+
+		.small-cursor {
+		    width: 10px;
+		    height: 10px;
+		    background: red;
+		    margin: 10px auto;
+		    border-radius: 50px;
+		}
+
+
+		.buttonGroup button {
+			cursor: none;
+		}
+
+		.word {
+		  position: absolute;
+		  opacity: 0;
+		  padding-left: 10px;
+		}
+
+		.letter {
+		  display: inline-block;
+		  position: relative;
+		  float: left;
+		  transform: translateZ(25px);
+		  transform-origin: 50% 50% 25px;
+		}
+
+		.letter.out {
+		  transform: rotateX(90deg);
+		  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		}
+
+		.letter.behind {
+		  transform: rotateX(-90deg);
+		}
+
+		.letter.in {
+		  transform: rotateX(0deg);
+		  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		.wisteria {
+		  color: #8e44ad;
+		}
+
+		.belize {
+		  color: #2980b9;
+		}
+
+		.pomegranate {
+		  color: #c0392b;
+		}
+
+		.green {
+		  color: #16a085;
+		}
+
+		.midnight {
+		  color: #2c3e50;
+		}
+
+
+/*	Rest of the styles are in  """ style.css """	*/
+
+	</style>
+</head>
+<body>
+	<div class="cursor"><div class="small-cursor"></div></div>
+	<main>
+		<!-- Menu Button (visible only on smaller screens) -->
+		<button class="menu-button" onclick="toggleSidebar()">☰ Menu</button>
+
+		<!-- Sidebar with navigation links -->
+		<aside class="sidebar">
+			<ul class="Links">
+				<li onclick="Navigate(0)" class="activeLink"><i class="fa-solid fa-house"></i><p>Home</p></li>
+				<li onclick="Navigate(1)"><i class="fa-solid fa-user"></i><p>About</p></li>
+				<li onclick="Navigate(2)"><i class="fa-solid fa-list"></i><p>Services</p></li>
+				<li onclick="Navigate(3)"><i class="fa-solid fa-images"></i><p>Gallery</p></li>
+				<li onclick="Navigate(4)"><i class="fa-solid fa-comments"></i><p>Contact</p></li>
+			</ul>
+		</aside>
+
+		<!-- Swiper container for slides -->
+		<div class="swiper mySwiper">
+			<div class="SlideContainer swiper-wrapper">
+				
+				<!-- Home Slide with an introduction -->
+				<div class="swiper-slide home-slide">
+					<div class="HomeContent">
+						<h1>Hi! I'm <span class="stylized-name">James</span>,</h1>
+						<h2>A <span class="proffesions">
+								    <span class="word wisteria"> Web Designer.</span>
+								    <span class="word belize"> Freelancer.</span>
+								    <span class="word pomegranate"> Photographer.</span>
+								</span></h2>
+						<p class="heroline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officia iste tenetur dolor quis officiis quidem sapiente illo nostrum mollitia.</p>
+						<div class="buttonGroup"><button>Hire Me</button><button>Contact</button></div>
+					</div>
+
+					<!-- Profile image for Home section -->
+					<div class="SideImg">
+						<img src="../assets/p-1.png" alt="Profile Image">
+					</div>
+
+					<!-- Instructional text for scrolling to the next slide -->
+					<p class="slide-help">Scroll for next slide <small>or use Arrow left and right</small> <i class="fa-solid fa-chevron-right fa-shake"></i></p>
+				</div>
+				
+				<!-- About Slide with personal information -->
+				<div class="swiper-slide">
+					<div class="about-us">
+						<h1 class="heading">About Me</h1>
+						<h3 class="sub-heading">I'm James, <span class="proffesions">A 
+									<span class="word wisteria"> Web Designer.</span>
+								    <span class="word belize"> Freelancer.</span>
+								    <span class="word pomegranate"> Photographer.</span></span></h3>
+						<p class="aboutme-details">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iure, iste debitis unde maiores earum, ipsam quaerat quo magni sunt nisi at ullam nostrum pariatur soluta mollitia omnis consectetur qui similique.
+						</p>
+						
+						<!-- Personal info table and skills section -->
+						<div class="about-me-division">
+							<div class="about-me-table">
+								<li><span>Experience:</span> [Years of Experience]</li>
+								<li><span>Country:</span> [Country]</li>
+								<li><span>Availability:</span> 24/7</li>
+								<li><span>Satisfied Clients:</span> [Client Count]</li>
+								<li><span>Age:</span> [Your Age]</li>
+								<li><span>Phone:</span> [Your Phone]</li>
+								<li><span>Languages:</span> HTML, CSS, JavaScript</li>
+								<li><span>Degree:</span> [Your Degree]</li>
+								<div class="buttonGroup"><button>Hire Me</button><button>Contact</button></div>
+							</div>
+
+							<!-- Skills with progress bars -->
+							<div class="skill-bar">
+								<li><p>HTML</p><div class="bar"><div class="active-bar" style="width:99%"></div></div></li>
+								<li><p>CSS</p><div class="bar"><div class="active-bar" style="width:80%"></div></div></li>
+								<li><p>JavaScript</p><div class="bar"><div class="active-bar" style="width:85%"></div></div></li>
+								<li><p>Python</p><div class="bar"><div class="active-bar" style="width:50%"></div></div></li>
+								<li><p>Django</p><div class="bar"><div class="active-bar" style="width:60%"></div></div></li>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Slide showcasing provided services -->
+				<div class="swiper-slide services">
+					<h1 class="heading">Services</h1>
+
+					<!-- Service details with icons -->
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div><h2>Web Design</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-globe"></i></div><h2>Web Development</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h2>SEO</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-image"></i></div><h2>Graphic Design</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h2>App Development</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+					<div class="service"><div class="service-icon"><i class="fa-solid fa-database"></i></div><h2>Database Management</h2><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+				</div>
+				
+				<!-- Gallery Slide for showcasing project images -->
+				<div class="swiper-slide gallery">
+					<h1 class="heading">Gallery</h1>
+					<!-- Project images (can be customized) -->
+					<div class="project"><img src="../assets/p-1.png" alt="Project Image"></div>
+					<div class="project"><img src="../assets/p-1.png" alt="Project Image"></div>
+					<div class="project"><img src="../assets/p-1.png" alt="Project Image"></div>
+				</div>
+				
+				<!-- Contact Slide with contact details and form -->
+				<div class="swiper-slide contactMe">
+					<h1 class="heading">Contact</h1>
+					<div class="contactinfo"><i class="fa-solid fa-phone"></i><h3>Phone</h3><p>[Your Phone]</p></div>
+					<div class="contactinfo"><i class="fa-solid fa-location-dot"></i><h3>Location</h3><p>[Your Location]</p></div>
+					<div class="contactinfo"><i class="fa-regular fa-envelope"></i><h3>Email</h3><p>[Your Email]</p></div>
+					<div class="contactinfo"><i class="fa-solid fa-globe"></i><h3>Website</h3><p>[Your Website]</p></div>
+
+					<!-- Contact form -->
+					<form>
+						<h2>Send a Message</h2>
+						<input type="text" placeholder="Name">
+						<input type="text" placeholder="Email">
+						<textarea rows="10" placeholder="Message..."></textarea>
+						<button class="primary">Send</button>
+					</form>
+
+					<!-- Footer with copyright info -->
+					<footer>
+						<li>© 2023 [Your Brand]</li>
+					</footer>
+				</div>
+			</div>
+	</main>
+
+	<!-- Importing Swiper JS for slide functionality -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+	<!-- Link to custom JavaScript file -->
+	<script src="script.js"></script>
+
+	<script type="text/javascript">
+		//  for cursor
+		const cursor = document.querySelector('.cursor');
+
+		document.addEventListener('mousemove', e => {
+		    cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+		});
+
+		document.addEventListener('click', e => {
+		    cursor.classList.add("expand");
+		    setTimeout(() => {
+		        cursor.classList.remove("expand");
+		    }, 500);
+		});
+
+
+
+
+
+
+		// ======================
+		//  for chaning the profession text 
+		var words = document.getElementsByClassName("word");
+		var wordArray = [];
+		var currentWord = 0;
+
+		words[currentWord].style.opacity = 1;
+		for (var i = 0; i < words.length; i++) {
+		  splitLetters(words[i]);
+		}
+
+		function changeWord() {
+		  var cw = wordArray[currentWord];
+		  var nw =
+		    currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+		  for (var i = 0; i < cw.length; i++) {
+		    animateLetterOut(cw, i);
+		  }
+
+		  for (var i = 0; i < nw.length; i++) {
+		    nw[i].className = "letter behind";
+		    nw[0].parentElement.style.opacity = 1;
+		    animateLetterIn(nw, i);
+		  }
+
+		  currentWord = currentWord == wordArray.length - 1 ? 0 : currentWord + 1;
+		}
+
+		function animateLetterOut(cw, i) {
+		  setTimeout(function () {
+		    cw[i].className = "letter out";
+		  }, i * 80);
+		}
+
+		function animateLetterIn(nw, i) {
+		  setTimeout(function () {
+		    nw[i].className = "letter in";
+		  }, 340 + i * 80);
+		}
+
+		function splitLetters(word) {
+		  var content = word.innerHTML;
+		  word.innerHTML = "";
+		  var letters = [];
+		  for (var i = 0; i < content.length; i++) {
+		    var letter = document.createElement("span");
+		    letter.className = "letter";
+		    letter.innerHTML = content.charAt(i);
+		    word.appendChild(letter);
+		    letters.push(letter);
+		  }
+
+		  wordArray.push(letters);
+		}
+
+		changeWord();
+		setInterval(changeWord, 4000);
+
+	</script>
+</body>
+</html>
