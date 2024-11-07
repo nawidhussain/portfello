@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfello - HTML5 CSS & JS</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+<!-- background animation -->
+<div class="animation-container"></div>
+
+<div id="content">
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="" class="logo">Logo</a>
+    </div>  
+    <a href="#home_page" class="nav-item">Home</a>
+    <a href="#about_page" class="nav-item active">About</a>
+    <a href="#projects_show" class="nav-item">Projects</a>
+    <a href="#cv_download" onclick="downloadCV()" class="nav-item">CV</a>
+    <a href="#contact_page" class="nav-item">Contact</a>
+  </nav>
+
+
+  <!-- ============================== -->
+  <!-- Home Sec -->
+  <!-- ============================== -->
+  <section class="home" id="home_page"> 
+    <div class="yellow-circle"></div> <!-- Add this yellow circle -->
+    <img src="../assets/yellow-splashes.png" alt="splashes" class="yellow-splashes splashes">   <!-- add these png splashes -->
+    <div class="content">
+      <p class="intro">I'm</p>
+      <h1>Kate Winslet</h1>
+      <h2 class="typing-text">
+        <span id="typed-text"></span><span class="cursor">|</span>
+      </h2>
+      <div class="buttons">
+        <button class="btn download-btn">Download CV</button>
+        <button class="btn play-btn">
+          <span class="play-icon">&#9658;</span> Play Video
+        </button>
+      </div>
+    </div>
+    <div class="image">
+      <img src="../assets/p-1-transformed.png" alt="Profile Image" class="unselectable">
+    </div>
+  </section>
+
+
+  <!-- ============================== -->
+  <!-- About Me Sec -->
+  <!-- ============================== -->
+  <section class="about-section" id="about_page">
+    <h2 class="section-title">Who Am I?</h2>
+    <p class="about-text">
+      Hi, I’m Jack Smith. I specialize in graphic design, web design, software, and application development. With over 300 projects completed successfully, I am ready to take on new challenges and deliver quality results.
+    </p>
+    <div class="services">
+      <div class="service-card" data-title="Graphic Design">
+        <i class="icon">&#x1F5A8;</i>
+        <h3>Graphic Design</h3>
+        <a href="#" class="more-link" id="openModalGD">MORE</a>
+      </div>
+      <div class="service-card" data-title="Web Design">
+        <i class="icon">&#128187;</i>
+        <h3>Web Design</h3>
+        <a href="#" class="more-link" id="openModalWD">MORE</a>
+      </div>
+      <div class="service-card" data-title="Software">
+        <i class="icon">&#x1F4BB;</i>
+        <h3>Software</h3>
+        <a href="#" class="more-link" id="openModalS">MORE</a>
+      </div>
+      <div class="service-card" data-title="Application">
+        <i class="icon">&#128100;</i>
+        <h3>Application</h3>
+        <a href="#" class="more-link" id="openModalA">MORE</a>
+      </div>
+    </div>
+    <div class="project-banner">
+      <p>I am happy to let you know that 300+ projects have been done successfully!</p>
+      <a href="#" class="learn-more">LEARN MORE</a>
+    </div>
+  </section>
+
+
+  <!-- ============================== -->
+  <!-- My Projects Sec -->
+  <!-- ============================== -->
+  <section class="my-projects-section" id="projects_show">
+    <h1>My Projects</h1>
+    <div class="project-filters">
+      <span onclick="filterProjects('all')" class="active">All Projects</span>
+      <span onclick="filterProjects('uiux')">UI/UX Design</span>
+      <span onclick="filterProjects('graphic')">Graphic Design</span>
+    </div>
+    <div class="projects-grid">
+      <div class="project-item uiux"><img src="../assets/p-1.png" alt="Project 1"></div>
+      <div class="project-item graphic"><img src="../assets/p-1.png" alt="Project 2"></div>
+      <div class="project-item uiux"><img src="../assets/p-1.png" alt="Project 3"></div>
+      <div class="project-item graphic"><img src="../assets/p-1.png" alt="Project 4"></div>
+      <!-- Add more project items as needed -->
+    </div>
+  </section>
+
+
+  <!-- ============================== -->
+  <!-- My Contact Sec -->
+  <!-- ============================== -->
+    <section class="contact-section" id="contact_page">
+      <div class="contact-container">
+          <div class="contact-info" style="text-align: left;">
+            <h1>Let's Work Together!</h1>
+              <p><strong>My office:</strong><br><span style="font-size: 20px; font-weight: bold; text-decoration: underline;">123 Street, New York, USA</span></p>
+              <p><strong>Call me:</strong><br><span style="font-size: 20px; font-weight: bold; text-decoration: underline;">+012 345 6789</span></p>
+              <p><strong>Mail me:</strong><br><span style="font-size: 20px; font-weight: bold; text-decoration: underline;">info@example.com</span></p>
+              <p><strong>Follow me:</strong><br>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              </p>
+          </div>
+          <div class="contact-form">
+              <p class="contact-note">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="#">Download Now</a>.</p>
+              <form>
+                  <input type="text" placeholder="Your Name">
+                  <input type="email" placeholder="Your Email">
+                  <input type="text" placeholder="Subject">
+                  <textarea placeholder="Message"></textarea>
+                  <button type="submit">Send Message</button>
+              </form>
+          </div>
+      </div>
+  </section>
+
+
+
+  <!-- ==================
+    footer section 
+  =======================-->
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8824348302674!2d-73.9840192845953!3d40.75889507932626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ1JzMyLjAiTiA3M8KwNTknMTYuMCJX!5e0!3m2!1sen!2sus!4v1647023942935!5m2!1sen!2sus"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <footer class="footer-section">
+        <p class="footer-text">
+            © <span>Your Site Name</span>, All Rights Reserved.
+        </p>
+        <p class="footer-design">
+            Designed By <a href="#" target="_blank">HTML Codex</a>
+        </p>
+    </footer>
+</div>
+
+
+<!-- Modal Structures -->
+<!-- Graphic Design Modal -->
+<div class="modal" id="modalGD">
+  <div class="modal-content">
+    <span class="close" data-modal="modalGD">&times;</span>
+    <h2>Graphic Design</h2>
+    <p>Graphic design is the art of visual communication that combines images, words, and ideas to convey information to an audience.</p>
+  </div>
+</div>
+
+<!-- Web Design Modal -->
+<div class="modal" id="modalWD">
+  <div class="modal-content">
+    <span class="close" data-modal="modalWD">&times;</span>
+    <h2>Web Design</h2>
+    <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites.</p>
+  </div>
+</div>
+
+<!-- Software Modal -->
+<div class="modal" id="modalS">
+  <div class="modal-content">
+    <span class="close" data-modal="modalS">&times;</span>
+    <h2>Software</h2>
+    <p>Software development is the process of computer programming, documenting, testing, and bug fixing involved in creating and maintaining applications.</p>
+  </div>
+</div>
+
+<!-- Application Modal -->
+<div class="modal" id="modalA">
+  <div class="modal-content">
+    <span class="close" data-modal="modalA">&times;</span>
+    <h2>Application</h2>
+    <p>Applications are software designed to help the user to perform specific tasks. They can be desktop applications, mobile applications, or web applications.</p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
