@@ -124,7 +124,6 @@ aside li i {
 	margin: auto 0px;
 	flex: 1;
 	height: auto;
-	padding: 100px;
 	user-select: none;
 }
 
@@ -176,13 +175,11 @@ aside li i {
 }
 
 .HomeContent h1 {
-	font-size: 3em;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
 
 .HomeContent h2 {
-	font-size: 2.3em;
 	margin-bottom: 10px;
 	font-weight: 600;
 }
@@ -197,14 +194,12 @@ aside li i {
 }
 
 .HomeContent .heroline {
-	font-size: 1.5rem;
 	font-weight: 300;
 	padding-right: 50px;
 }
 
 .buttonGroup {
 	display: flex;
-	padding: 10px 0px;
 	margin-top: 10px;
 }
 
