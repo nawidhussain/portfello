@@ -1,0 +1,246 @@
+	/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Light Mode Theme */
+body.light-mode {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+body.light-mode .project-showcase {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .text-section h1 {
+  color: #333;
+}
+
+body.light-mode .next-button, 
+body.light-mode .prev-button {
+  background-color: #007BFF;
+}
+
+body.light-mode .next-button:hover, 
+body.light-mode .prev-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .project-showcase {
+  background: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .text-section h1 {
+  color: #f5f5f5;
+}
+
+body.dark-mode .next-button, 
+body.dark-mode .prev-button {
+  background-color: #bb86fc;
+}
+
+body.dark-mode .next-button:hover, 
+body.dark-mode .prev-button:hover {
+  background-color: #9b59b6;
+}
+
+/* Common Styles */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: left 0.5s ease;
+}
+
+.slide.active {
+  left: 0;
+}
+
+.slide.previous {
+  left: -100%;
+}
+
+.project-showcase {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.text-section, .image-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+}
+
+.text-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.next-button, .prev-button {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+body.light-mode #theme-toggle {
+  color: #333;
+}
+
+body.dark-mode #theme-toggle {
+  color: #f5f5f5;
+}
+
+/* For Tablets (between 768px and 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .text-section h1 {
+    font-size: 2em;
+  }
+
+  .text-section p {
+    font-size: 1em;
+  }
+
+  .next-button, .prev-button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  .project-showcase {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section, .image-section {
+    padding: 20px;
+  }
+}
+
+/* For Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+
+
+  /* Stack text and image vertically */
+  .project-showcase {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section, .image-section {
+    padding: 10px;
+  }
+
+  
+}
+.open-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Hover Effect */
+.open-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.5);
+}
+
+/* Active (Pressed) State */
+.open-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Dark Mode Button */
+body.dark-mode .open-button {
+  background-color: #bb86fc;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(187, 134, 252, 0.3);
+}
+
+body.dark-mode .open-button:hover {
+  background-color: #9b59b6;
+  box-shadow: 0 6px 12px rgba(155, 89, 182, 0.5);
+}

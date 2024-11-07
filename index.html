@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="light-mode">
+  <!-- Toggle Switch -->
+  <button id="theme-toggle" onclick="toggleTheme()">🌞</button>
+
+  <div class="slider" id="slider">
+    <!-- Project 1 -->
+    <div class="slide active" id="project1">
+      <div class="project-showcase">
+        <div class="text-section">
+          <h1>Project 1: Portfello (Light Theme)</h1>
+          <p>This version of Portfello adopts a clean and elegant light theme aimed at delivering a professional and inviting feel. The design emphasizes simplicity, with soft colors and spacious layout elements, ideal for a modern portfolio. Advanced animations created with HTML, CSS, and JavaScript enhance the user experience by adding smooth transitions and effects that bring the interface to life. The project leverages Font Awesome icons and custom Google Fonts to add personality and clarity, making this portfolio both visually appealing and highly functional.</p>
+          <button class="next-button" style="margin-bottom: 10px;" onclick="showNextSlide()">See Project 2</button>
+          <a href="portfello1/index.html" class="open-button" >Open</a>
+        </div>
+        <div class="image-section">
+          <img src="file:///C:/Users/Nawid%20Hussain/Documents/dfsfsfs.png" alt="Project 1 Image">
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="slide" id="project2">
+      <div class="project-showcase">
+        <div class="text-section">
+          <h1>Project 2: Portfello (Dark Theme)</h1>
+          <p>The second iteration of Portfello explores a dark theme, catering to a more contemporary and bold aesthetic. With rich contrasts and high-impact visuals, this design emphasizes a sleek, modern look, making it perfect for tech-savvy users. The dark theme, combined with dynamic animations, provides an immersive browsing experience powered by HTML, CSS, and JavaScript. Font Awesome icons and carefully selected Google Fonts further enhance the edgy style, showcasing creativity and technical skill while maintaining excellent usability.</p>
+          <button class="prev-button" onclick="showPreviousSlide()">Back to Project 1</button>
+        </div>
+        <div class="image-section">
+          <img src="file:///C:/Users/Nawid%20Hussain/Downloads/Screenshot%202024-11-07%20232001.png" alt="Project 2 Image">
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
